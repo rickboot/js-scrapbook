@@ -1,0 +1,15 @@
+0 silly argv { _: [ 'clean' ], lernaVersion: '8.1.2', '$0': 'lerna' }
+1 notice cli v8.1.2
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath /Users/rick/code/typescript/React and TypeScript Portfolio/jbook
+4 info Removing the following directories:
+5 info clean packages/cli/node_modules
+5 info clean packages/local-api/node_modules
+5 info clean packages/local-client/node_modules
+6 info clean removing /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/cli/node_modules
+7 silly rimrafDir /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/cli/node_modules
+8 info clean removing /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-api/node_modules
+9 silly rimrafDir /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-api/node_modules
+10 info clean removing /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-client/node_modules
+11 silly rimrafDir /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-client/node_modules
+12 error
