@@ -1,15 +1,7 @@
-0 silly argv { _: [ 'clean' ], lernaVersion: '8.1.2', '$0': 'lerna' }
-1 notice cli v8.1.2
-2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
-3 verbose rootPath /Users/rick/code/typescript/React and TypeScript Portfolio/jbook
-4 info Removing the following directories:
-5 info clean packages/cli/node_modules
-5 info clean packages/local-api/node_modules
-5 info clean packages/local-client/node_modules
-6 info clean removing /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/cli/node_modules
-7 silly rimrafDir /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/cli/node_modules
-8 info clean removing /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-api/node_modules
-9 silly rimrafDir /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-api/node_modules
-10 info clean removing /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-client/node_modules
-11 silly rimrafDir /Users/rick/code/typescript/React and TypeScript Portfolio/jbook/packages/local-client/node_modules
-12 error
+39 error Error: Command failed with exit code 128: git add -- packages/local-client/package.json packages/local-client/package-lock.json packages/local-api/package.json packages/cli/package.json lerna.json package-lock.json
+39 error fatal: Pathspec 'packages/local-client/package.json' is in submodule 'packages/local-client'
+39 error     at makeError (/Users/rick/code/typescript/React and TypeScript Portfolio/js-scrapbook/node_modules/execa/lib/error.js:59:11)
+39 error     at handlePromise (/Users/rick/code/typescript/React and TypeScript Portfolio/js-scrapbook/node_modules/execa/index.js:114:26)
+39 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+39 error     at async VersionCommand.updatePackageVersions (/Users/rick/code/typescript/React and TypeScript Portfolio/js-scrapbook/node_modules/lerna/dist/index.js:8483:11)
+39 error     at async Promise.all (index 0)
