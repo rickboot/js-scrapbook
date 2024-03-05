@@ -1,15 +1,16 @@
 {
   "name": "js-scrapbook",
   "version": "0.5.0",
-  "description": "Command Line Interface of js-scrapbook",
+  "description": "CLI for js-scrapbook",
+  "bin": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "rickboot <rickallen@gmail.com>",
   "homepage": "https://github.com/rickboot/js-scrapbook#readme",
   "license": "ISC",
-  "directories": {
-    "test": "__tests__"
-  },
   "files": [
-    "*"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   },
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "test": "node ./__tests__/cli.test.js"
+    "prepublishOnly": "tsc"
   },
   "bugs": {
     "url": "https://github.com/rickboot/js-scrapbook/issues"

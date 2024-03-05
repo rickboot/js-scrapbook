@@ -1,17 +1,17 @@
 {
   "name": "@js-scrapbook/local-api",
   "version": "0.5.0",
-  "description": "> TODO: description",
+  "description": "REST API for js-scrapbook",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "rickboot <rickallen@gmail.com>",
   "homepage": "https://github.com/rickboot/js-scrapbook#readme",
   "license": "ISC",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "directories": {
-    "test": "__tests__"
-  },
   "files": [
-    "*"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "test": "node ./__tests__/local-api.test.js"
+    "prepublishOnly": "tsc"
   },
   "bugs": {
     "url": "https://github.com/rickboot/js-scrapbook/issues"
