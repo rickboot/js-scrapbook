@@ -1,9 +1,9 @@
 {
-  "name": "cli",
-  "version": "0.0.0",
-  "description": "> TODO: description",
+  "name": "js-scrapbook",
+  "version": "0.5.0",
+  "description": "Command Line Interface of js-scrapbook",
   "author": "rickboot <rickallen@gmail.com>",
-  "homepage": "https://github.com/rickboot/TS-Maps#readme",
+  "homepage": "https://github.com/rickboot/js-scrapbook#readme",
   "license": "ISC",
   "directories": {
     "test": "__tests__"
@@ -13,19 +13,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rickboot/TS-Maps.git"
+    "url": "https://github.com/rickboot/js-scrapbook"
   },
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
     "test": "node ./__tests__/cli.test.js"
   },
   "bugs": {
-    "url": "https://github.com/rickboot/TS-Maps/issues"
+    "url": "https://github.com/rickboot/js-scrapbook/issues"
   },
   "dependencies": {
-    "@types/redux": "^3.6.0",
     "commander": "^12.0.0",
-    "local-api": "file:../local-api",
+    "@js-scrapbook/local-api": "file:../local-api"
+  },
+  "devDependencies": {
+    "@types/redux": "^3.6.0",
     "typescript": "^5.3.3"
   }
 }
