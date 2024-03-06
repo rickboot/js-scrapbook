@@ -18,11 +18,10 @@ export const serve = (
       createProxyMiddleware({
         target: 'http://127.0.0.1:3030',
         ws: true,
-        // logLevel: 'silent',
+        logLevel: 'silent',
       })
     );
   } else {
-    console.log('wtf');
     const clientPath = require.resolve(
       '@js-scrapbook/local-client/build/index.html'
     );

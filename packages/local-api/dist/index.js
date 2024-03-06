@@ -15,11 +15,10 @@ const serve = (port, filename, dir, useProxy) => {
         app.use((0, http_proxy_middleware_1.createProxyMiddleware)({
             target: 'http://127.0.0.1:3030',
             ws: true,
-            // logLevel: 'silent',
+            logLevel: 'silent',
         }));
     }
     else {
-        console.log('wtf');
         const clientPath = require.resolve('@js-scrapbook/local-client/build/index.html');
         const staticPath = path_1.default.dirname(clientPath);
         console.log('staticPath', staticPath);
