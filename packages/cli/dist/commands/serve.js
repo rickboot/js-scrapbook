@@ -16,7 +16,7 @@ exports.serveCommand = void 0;
 const commander_1 = require("commander");
 const local_api_1 = require("@js-scrapbook/local-api");
 const node_path_1 = __importDefault(require("node:path"));
-const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 exports.serveCommand = new commander_1.Command()
     .command('serve [filename]')
     .description('Launch server with local file')
@@ -25,7 +25,7 @@ exports.serveCommand = new commander_1.Command()
     const baseFilename = node_path_1.default.basename(filename);
     const dir = node_path_1.default.dirname(filename);
     try {
-        yield (0, local_api_1.serve)(parseInt(port), baseFilename, dir, !isProduction);
+        yield (0, local_api_1.serve)(parseInt(port), baseFilename, dir, isDevelopment);
         console.log(`App running at http://localhost:${port}`);
     }
     catch (err) {

@@ -16,14 +16,19 @@ export const serve = (
   if (useProxy) {
     app.use(
       createProxyMiddleware({
-        target: 'http://127.0.0.1:3000',
+        target: 'http://127.0.0.1:3030',
         ws: true,
-        logLevel: 'silent',
+        // logLevel: 'silent',
       })
     );
   } else {
-    const clientPath = require.resolve('local-client/build/index.html');
-    app.use(express.static(path.dirname(clientPath)));
+    console.log('wtf');
+    const clientPath = require.resolve(
+      '@js-scrapbook/local-client/build/index.html'
+    );
+    const staticPath = path.dirname(clientPath);
+    console.log('staticPath', staticPath);
+    app.use(express.static(staticPath));
   }
 
   return new Promise<void>((resolve, reject): void => {
