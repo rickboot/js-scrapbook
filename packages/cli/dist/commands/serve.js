@@ -20,16 +20,15 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 exports.serveCommand = new commander_1.Command()
     .command('serve [filename]')
     .description('Launch server with local file')
-    .option('-p, --port <port>', 'server port', '3333')
-    .action((filename = 'notebook.json', { port }) => __awaiter(void 0, void 0, void 0, function* () {
-    const baseFilename = node_path_1.default.basename(filename);
-    const dir = node_path_1.default.dirname(filename);
+    .option('-p, --port <number>', 'server port', '3333')
+    .action((filename = 'notebook.json', options) => __awaiter(void 0, void 0, void 0, function* () {
     const isLocalApiError = (err) => {
         return typeof err.code === 'string';
     };
     try {
-        yield (0, local_api_1.serve)(parseInt(port), baseFilename, dir, isDevelopment);
-        console.log(`App running at http://localhost:${port}`);
+        const baseFilename = node_path_1.default.basename(filename);
+        const dir = node_path_1.default.join(process.cwd(), node_path_1.default.dirname(filename));
+        yield (0, local_api_1.serve)(parseInt(options.port), baseFilename, dir, isDevelopment);
     }
     catch (err) {
         if (isLocalApiError(err)) {

@@ -11,18 +11,16 @@ interface LocalApiError {
 export const serveCommand = new Command()
   .command('serve [filename]')
   .description('Launch server with local file')
-  .option('-p, --port <port>', 'server port', '3333')
-  .action(async (filename = 'notebook.json', { port }) => {
-    const baseFilename = path.basename(filename);
-    const dir = path.dirname(filename);
-
+  .option('-p, --port <number>', 'server port', '3333')
+  .action(async (filename = 'notebook.json', options: { port: string }) => {
     const isLocalApiError = (err: any): err is LocalApiError => {
       return typeof err.code === 'string';
     };
 
     try {
-      await serve(parseInt(port), baseFilename, dir, isDevelopment);
-      console.log(`App running at http://localhost:${port}`);
+      const baseFilename = path.basename(filename);
+      const dir = path.join(process.cwd(), path.dirname(filename));
+      await serve(parseInt(options.port), baseFilename, dir, isDevelopment);
     } catch (err) {
       if (isLocalApiError(err)) {
         if (err.code === 'EADDRINUSE') {
