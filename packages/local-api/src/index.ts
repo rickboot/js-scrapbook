@@ -25,9 +25,7 @@ export const serve = (
     const clientPath = require.resolve(
       '@js-scrapbook/local-client/build/index.html'
     );
-    const staticPath = path.dirname(clientPath);
-    console.log('staticPath', staticPath);
-    app.use(express.static(staticPath));
+    app.use(express.static(path.dirname(clientPath)));
   }
 
   return new Promise<void>((resolve, reject): void => {

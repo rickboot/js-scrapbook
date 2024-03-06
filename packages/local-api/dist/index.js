@@ -20,9 +20,7 @@ const serve = (port, filename, dir, useProxy) => {
     }
     else {
         const clientPath = require.resolve('@js-scrapbook/local-client/build/index.html');
-        const staticPath = path_1.default.dirname(clientPath);
-        console.log('staticPath', staticPath);
-        app.use(express_1.default.static(staticPath));
+        app.use(express_1.default.static(path_1.default.dirname(clientPath)));
     }
     return new Promise((resolve, reject) => {
         app.listen(port, resolve).on('error', reject);

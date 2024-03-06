@@ -24,15 +24,22 @@ exports.serveCommand = new commander_1.Command()
     .action((filename = 'notebook.json', { port }) => __awaiter(void 0, void 0, void 0, function* () {
     const baseFilename = node_path_1.default.basename(filename);
     const dir = node_path_1.default.dirname(filename);
+    const isLocalApiError = (err) => {
+        return typeof err.code === 'string';
+    };
     try {
         yield (0, local_api_1.serve)(parseInt(port), baseFilename, dir, isDevelopment);
         console.log(`App running at http://localhost:${port}`);
     }
     catch (err) {
-        if (err) {
-            if (typeof err === 'object' && 'message' in err && 'port' in err) {
-                console.log(`Port ${err.port} already in use. Try another. Example: serve -p 2112`);
+        if (isLocalApiError(err)) {
+            if (err.code === 'EADDRINUSE') {
+                console.error('Port is in use. Try running on a different port.');
             }
         }
+        else if (err instanceof Error) {
+            console.log('Heres the problem', err.message);
+        }
+        process.exit(1);
     }
 }));
