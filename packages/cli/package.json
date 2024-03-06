@@ -1,6 +1,6 @@
 {
   "name": "js-scrapbook",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "CLI for js-scrapbook",
   "bin": "dist/index.js",
   "publishConfig": {
@@ -24,12 +24,12 @@
     "url": "https://github.com/rickboot/js-scrapbook/issues"
   },
   "dependencies": {
-    "@js-scrapbook/local-api": "^0.1.11",
+    "@js-scrapbook/local-api": "^0.1.12",
     "commander": "^12.0.0"
   },
   "devDependencies": {
     "@types/redux": "^3.6.0",
     "typescript": "^5.3.3"
   },
-  "gitHead": "94a4e7739b6ea1e150cb15fc1bc5c7ab35dce2ac"
+  "gitHead": "feded21cd15f46b856f0750dfe1cbe1ad2560702"
 }

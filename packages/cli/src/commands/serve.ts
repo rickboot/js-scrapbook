@@ -2,7 +2,7 @@ import { Command } from 'commander';
 import { serve } from '@js-scrapbook/local-api';
 import path from 'node:path';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const serveCommand = new Command()
   .command('serve [filename]')
@@ -13,7 +13,7 @@ export const serveCommand = new Command()
     const dir = path.dirname(filename);
 
     try {
-      await serve(parseInt(port), baseFilename, dir, !isProduction);
+      await serve(parseInt(port), baseFilename, dir, isDevelopment);
       console.log(`App running at http://localhost:${port}`);
     } catch (err) {
       if (err) {
