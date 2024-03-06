@@ -29,6 +29,7 @@ exports.serveCommand = new commander_1.Command()
         const baseFilename = node_path_1.default.basename(filename);
         const dir = node_path_1.default.join(process.cwd(), node_path_1.default.dirname(filename));
         yield (0, local_api_1.serve)(parseInt(options.port), baseFilename, dir, isDevelopment);
+        console.log(`Opened ${filename}. Open http://localhost:${options.port} to edit.`);
     }
     catch (err) {
         if (isLocalApiError(err)) {
