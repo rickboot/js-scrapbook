@@ -1,6 +1,6 @@
 {
   "name": "@js-scrapbook/local-api",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "REST API for js-scrapbook",
   "publishConfig": {
     "access": "public"
@@ -25,7 +25,7 @@
     "url": "https://github.com/rickboot/js-scrapbook/issues"
   },
   "dependencies": {
-    "@js-scrapbook/local-client": "^0.1.10",
+    "@js-scrapbook/local-client": "^0.1.11",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "http-proxy-middleware": "^2.0.6",
@@ -34,5 +34,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21"
-  }
+  },
+  "gitHead": "94a4e7739b6ea1e150cb15fc1bc5c7ab35dce2ac"
 }
