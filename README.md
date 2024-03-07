@@ -25,7 +25,22 @@ The project components include:
 
 #### How to use
 
-1. To install, run `npm i js-scrapbook`
-2. At command line, ``
+1. The project can be run remotely using npx.
 
-- custom esbuild plugin - fetches all files for an npm package from unpkg.com (need because by default esbuild will try to import from filesystem (which doesn't exist in browser))
+   `npx js-scrapbook serve`
+
+#### How to build
+
+TBD
+
+#### How it works
+
+TBD
+
+#### Possible updates
+
+- public portal with auth login and database
+- auto-sizing code and text cells
+- next.js version
+- esbuild update - is plugin hack still needed to bundle npm modules in browser?
+- migrate redux to RTK
